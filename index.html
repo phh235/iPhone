@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone switch</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <label class="switch">
+      <input type="checkbox" id="myToggler" onclick="changeColor()" />
+      <span class="slider round"></span>
+    </label>
+    <script>
+      const switchInput = document.querySelector("#myToggler");
+
+      switchInput.addEventListener("change", function () {
+        const body = document.querySelector("body");
+
+        if (this.checked) {
+          body.style.setProperty("--dot-bg", "black");
+          body.style.setProperty("--dot-color", "white");
+          body.style.transition = ".5s";
+        } else {
+          body.style.setProperty("--dot-bg", "white");
+          body.style.setProperty("--dot-color", "black");
+          body.style.transition = ".5s";
+        }
+      });
+    </script>
+  </body>
+</html>
